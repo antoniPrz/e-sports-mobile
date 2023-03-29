@@ -1,9 +1,5 @@
-import { StatusBar } from 'react-native';
-import { Background } from './src/components/Background';
-import { Hola } from './src/components/Hola';
-
-import { Home } from './src/screens/Home';
-import { Loading } from './src/components/Loading/index';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 import {
   useFonts,
@@ -22,14 +18,18 @@ export default function App() {
   });
 
   return (
-    <Background>
-      <StatusBar
-        barStyle='light-content'
-        backgroundColor='transparent'
-        translucent
-      />
-
-      {fonstLoaded ? <Home /> : <Loading />}
-    </Background>
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style='auto' />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
